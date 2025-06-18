@@ -1,0 +1,69 @@
+
+
+.animated-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1030; /* Make sure it stays above other content */
+  animation: bgFadeIn 1s ease forwards;
+  background-color: #222 !important; /* Darker than default bg-dark */
+}
+
+
+/* Fade in background */
+@keyframes bgFadeIn {
+  from {
+    background-color: transparent;
+  }
+  to {
+    background-color: #222;
+  }
+}
+
+/* Nav link base styles */
+.animated-link {
+  position: relative;
+  color: #ddd !important;
+  transition: color 0.3s ease;
+  font-weight: 500;
+}
+
+/* Underline animation on hover */
+.animated-link::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #61dafb; /* cool blue underline */
+  transition: width 0.3s ease;
+}
+
+/* Hover effect */
+.animated-link:hover,
+.animated-link:focus {
+  color: #61dafb !important;
+  outline: none;
+}
+
+.animated-link:hover::after,
+.animated-link:focus::after {
+  width: 100%;
+}
+
+/* Brand style with subtle scale animation */
+.navbar-brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #61dafb !important;
+  transition: transform 0.3s ease;
+}
+
+.navbar-brand:hover,
+.navbar-brand:focus {
+  transform: scale(1.1);
+  cursor: pointer;
+  outline: none;
+}

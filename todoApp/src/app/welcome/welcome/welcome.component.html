@@ -1,0 +1,11 @@
+<h1 class="welcome-heading">Welcome</h1>
+<div class="container welcome-container">
+  Welcome <span class="highlight">{{nameFromUrl}}</span>. Manage your todos
+  <a
+    [routerLink]="['/todos', nameFromUrl]"
+    [queryParams]="{id:userId}"
+    class="welcome-link"
+  >
+    here
+  </a>
+</div>

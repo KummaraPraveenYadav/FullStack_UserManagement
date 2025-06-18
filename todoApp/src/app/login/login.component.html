@@ -1,0 +1,41 @@
+<!-- Error Message -->
+<div class="error-msg" *ngIf="!isLoginSuccess">
+  User name or password is not correct
+</div>
+
+<!-- Login Form -->
+<div class="login-container">
+  <form (ngSubmit)="handleLogin()" #loginForm="ngForm" novalidate>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        [(ngModel)]="email"
+        autocomplete="off"
+        required
+        #emailInput="ngModel"
+        [class.invalid]="emailInput.invalid && emailInput.touched"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input
+        type="password"
+        id="password"
+        name="password"
+        [(ngModel)]="password"
+        autocomplete="off"
+        required
+        #passwordInput="ngModel"
+        [class.invalid]="passwordInput.invalid && passwordInput.touched"
+      />
+    </div>
+
+    <div class="button-container">
+      <button type="submit" [disabled]="loginForm.invalid">Login</button>
+    </div>
+  </form>
+</div>

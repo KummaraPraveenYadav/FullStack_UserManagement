@@ -1,0 +1,43 @@
+<h1 class="page-title">MY TODO'S</h1>
+
+<!-- Alert for delete message -->
+<div *ngIf="deleteMessage.length > 0" class="alert alert-success">
+  {{ deleteMessage }}
+</div>
+
+<div class="container todo-container">
+  <table class="todo-table">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Completed?</th>
+        <th>Deadline</th>
+        <th>Action</th>
+        <th>Update</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let todo of todos">
+        <td>{{ todo.id }}</td>
+        <td>{{ todo.name }}</td>
+        <td>{{ todo.description }}</td>
+        <td>
+         {{todo.completed}}
+        </td>
+        <td>{{ todo.endTime | date: 'mediumDate' }}</td>
+        <td>
+          <button class="btn btn-delete" (click)="deleteTodo(todo.id)">Delete</button>
+        </td>
+        <td>
+          <button class="btn btn-update" (click)="updateTodo(todo.id)">Update</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="add-todo-btn-container">
+    <button class="btn btn-add" (click)="addTodo()">+ Add Todo</button>
+  </div>
+</div>

@@ -1,0 +1,117 @@
+/* General styles */
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #f9fafc;
+  margin: 0;
+  padding: 0;
+}
+
+/* Page title */
+.page-title {
+  text-align: center;
+  font-size: 2.8rem;
+  margin-top: 5px;
+  color: #2c3e50;
+  font-weight: 700;
+}
+
+/* Main card container */
+.todo-container {
+  max-width: 1000px;
+  margin: 5px auto;
+  background-color: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.07);
+  padding: 20px;
+  padding-bottom: 100px; /* Prevent footer overlap */
+  transition: 0.3s ease-in-out;
+}
+
+
+/* Success alert message */
+.alert-success {
+  max-width: 1000px;
+  margin: 20px auto 0;
+  padding: 15px;
+  background-color: #d1e7dd;
+  border-left: 6px solid #198754;
+  color: #0f5132;
+  border-radius: 8px;
+  font-weight: 500;
+}
+
+/* Table styling */
+.todo-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 12px;
+}
+
+.todo-table thead {
+  background-color: #00bcd4;
+  color: white;
+}
+
+.todo-table th,
+.todo-table td {
+  padding: 12px 18px;
+  text-align: center;
+}
+
+.todo-table tbody tr {
+  background-color: #f5f5f5;
+  border-radius: 10px;
+  transition: transform 0.2s;
+}
+
+.todo-table tbody tr:hover {
+  transform: scale(1.01);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+/* Buttons */
+.btn {
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  color: white;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Delete button with gradient */
+.btn-delete {
+  background: linear-gradient(to right, #ff416c, #ff4b2b);
+}
+
+.btn-delete:hover {
+  background: linear-gradient(to right, #ff4b2b, #ff416c);
+}
+
+/* Update button with gradient */
+.btn-update {
+  background: linear-gradient(to right, #2193b0, #6dd5ed);
+}
+
+.btn-update:hover {
+  background: linear-gradient(to right, #6dd5ed, #2193b0);
+}
+
+/* Add button */
+.add-todo-btn-container {
+  text-align: center;
+  margin-top: 25px;
+}
+
+.btn-add {
+  background: linear-gradient(to right, #43e97b, #38f9d7);
+  padding: 12px 26px;
+  font-size: 1.1rem;
+  border-radius: 10px;
+}
+
+.btn-add:hover {
+  background: linear-g
+}

@@ -1,0 +1,56 @@
+<div class="container vh-100 d-flex justify-content-center align-items-center">
+    <div class="w-50">
+      <h2 class="mb-4 text-center">User Registration</h2>
+      <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+  
+  <!-- First Name -->
+<div class="mb-3">
+  <label for="firstName" class="form-label">First Name</label>
+  <input id="firstName" formControlName="firstName" type="text" class="form-control" />
+  <div *ngIf="registerForm.controls['firstName'].invalid && registerForm.controls['firstName'].touched" class="text-danger mt-1">
+    <div *ngIf="registerForm.controls['firstName'].errors?.['required']">First name is required</div>
+  </div>
+</div>
+
+<!-- Last Name -->
+<div class="mb-3">
+  <label for="lastName" class="form-label">Last Name</label>
+  <input id="lastName" formControlName="lastName" type="text" class="form-control" />
+  <div *ngIf="registerForm.controls['lastName'].invalid && registerForm.controls['lastName'].touched" class="text-danger mt-1">
+    <div *ngIf="registerForm.controls['lastName'].errors?.['required']">Last name is required</div>
+  </div>
+</div>
+
+  
+        <div class="mb-3">
+          <label for="email" class="form-label">Email</label>
+          <input id="email" formControlName="email" type="email" class="form-control" />
+          <div *ngIf="registerForm.controls['email'].invalid && registerForm.controls['email'].touched" class="text-danger mt-1">
+            <div *ngIf="registerForm.controls['email'].errors?.['required']">Email is a required field</div>
+            <div *ngIf="registerForm.controls['email'].errors?.['email']">Please enter a valid email</div>
+          </div>
+        </div>
+  
+        <div class="mb-3">
+          <label for="password" class="form-label">Password</label>
+          <input id="password" formControlName="password" type="password" class="form-control" />
+          <div *ngIf="registerForm.controls['password'].invalid && registerForm.controls['password'].touched" class="text-danger mt-1">
+            <div *ngIf="registerForm.controls['password'].errors?.['required']">Password is a required field</div>
+            <div *ngIf="registerForm.controls['password'].errors?.['minlength']">Minimum 8 characters required</div>
+            <div *ngIf="registerForm.controls['password'].errors?.['maxlength']">Maximum 16 characters allowed</div>
+          </div>
+        </div>
+  
+        <div class="mb-3">
+          <label for="confirmPassword" class="form-label">Confirm Password</label>
+          <input id="confirmPassword" formControlName="confirmPassword" type="password" class="form-control" />
+          <div *ngIf="registerForm.hasError('passwordMismatch') && registerForm.get('confirmPassword')?.touched" class="text-danger mt-1">
+            Passwords do not match
+          </div>
+        </div>
+  
+        <button type="submit" class="btn btn-primary w-100">Register</button>
+      </form>
+    </div>
+  </div>
+  
